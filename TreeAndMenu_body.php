@@ -26,19 +26,21 @@ class TreeAndMenu {
 
 		// This gets the remote path even if it's a symlink (MW1.25+)
 		$path = $wgExtensionAssetsPath . str_replace( "$IP/extensions", '', dirname( $wgAutoloadClasses[__CLASS__] ) );
-
-		// Fancytree script and styles
-		$wgResourceModules['ext.fancytree']['localBasePath'] = __DIR__ . '/fancytree';
-		$wgResourceModules['ext.fancytree']['remoteExtPath'] = "$path/fancytree";
-		$wgOut->addModules( 'ext.fancytree' );
-		$wgOut->addStyle( "$path/fancytree/fancytree.css" );
 		$wgOut->addJsConfigVars( 'fancytree_path', "$path/fancytree" );
 
-		// Suckerfish menu script and styles
-		$wgResourceModules['ext.suckerfish']['localBasePath'] = __DIR__ . '/suckerfish';
-		$wgResourceModules['ext.suckerfish']['remoteExtPath'] = "$path/suckerfish";
+//		// Fancytree script and styles
+//		$wgResourceModules['ext.fancytree']['localBasePath'] = __DIR__ . '/fancytree';
+//		$wgResourceModules['ext.fancytree']['remoteExtPath'] = "$path/fancytree";
+//		$wgOut->addStyle( "$path/fancytree/fancytree.css" );
+//
+//		// Suckerfish menu script and styles
+//		$wgResourceModules['ext.suckerfish']['localBasePath'] = __DIR__ . '/suckerfish';
+//		$wgResourceModules['ext.suckerfish']['remoteExtPath'] = "$path/suckerfish";
+//		$wgOut->addStyle( "$path/suckerfish/suckerfish.css" );
+
 		$wgOut->addModules( 'ext.suckerfish' );
-		$wgOut->addStyle( "$path/suckerfish/suckerfish.css" );
+		$wgOut->addModules( 'ext.fancytree' );
+
 	}
 
 	/**
